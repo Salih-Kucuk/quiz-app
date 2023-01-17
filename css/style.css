@@ -1,0 +1,231 @@
+body{
+    background-color: #e4e2e2;
+    font-family: 'Roboto Mono', monospace;
+}
+footer.footer{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 100px;
+}
+.btn_start,
+.quiz_box,
+.score_box{
+    box-shadow: rgba(17, 17, 26, 0.5) 0px 1px 0px, rgba(17, 17, 26, 0.5) 0px 8px 24px, rgba(17, 17, 26, 0.5) 0px 16px 48px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.quiz_box.active{
+    background: url(https://i.hizliresim.com/f2tkin3.jpg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover; 
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50% scale(1));    
+}
+
+.quiz_box{
+    width: 550px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50% scale(0.1));
+    transition: all 0.7s ease;
+}
+
+.quiz_box header .title{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.quiz_box .qusetion_text{
+    font-size: 25px;
+    font-weight: 600;
+}
+.quiz_box .option_list{
+    padding: 18px 0;
+}
+
+.quiz_box .option_list .option{
+    border: 1px solid #151d3b;
+    border-radius: 5px;
+    padding:  8px 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.quiz_box .option_list .option:hover{
+    color: #112b2c;
+    background-color: #ffd33d;
+}
+.quiz_box .option_list .option.correct{
+    color: #155724;
+    background-color: #d4edda;
+}
+.quiz_box .option_list .option.incorrect{
+    color: #721c24;
+    background-color: #f8d7da;
+}
+
+.quiz_box .option_list .option.disabled{
+    pointer-events: none;
+}
+
+.quiz_box .btn_next{
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.9);
+    transition: all 0.5s ease;
+}
+
+.quiz_box .btn_next.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.quiz_box .card-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* timer */
+.quiz_box header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.quiz_box header .timer{
+    display: flex;
+    align-items: center;
+    background: #43e068;
+    color: #000;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.quiz_box header .timer_half{
+    display: flex;
+    align-items: center;
+    background: #e2e05e;
+    color: #000;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.quiz_box header .timer_ending{
+    display: flex;
+    align-items: center;
+    background: crimson;
+    color: #000;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.quiz_box header .timer .time_text{
+    font-size: 18px;
+}
+.quiz_box header .timer .time_second{
+    font-size: 18px;
+    width: 25px;
+    text-align: center;
+}
+.quiz_box header .time_line{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: #43e068;
+}
+.quiz_box header .time_line_half{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: #e2e05e;
+}
+.quiz_box header .time_line_ending{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: crimson;
+}
+
+/*score box*/
+.score_box.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50% scale(1));
+}
+
+.score_box{
+    background-color: #d3d3d3;
+    width: 550px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50% scale(0.1));
+    transition: all 0.7s ease;
+}
+
+.score_box .fa-thumbs-up{
+    font-size: 90px;
+    color: rgb(120, 221, 73);
+    margin-bottom: 10px;
+}
+.score_box .fa-thumbs-down{
+    font-size: 90px;
+    color: crimson;
+    margin-bottom: 10px;
+}
+
+.score_box .score_text{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.win{
+    display: none;
+    margin-bottom: 10px;
+}
+.win.active{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.win a{
+    text-decoration: none;   
+}
+.lose{
+    display: none;
+    margin-bottom: 10px;
+}
+.lose.active{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.lose a{
+    color: crimson;
+    text-decoration: none;   
+}
+
